@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hotel List</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+<form th:action="@{/hotels/search}" method="get">
+    <input type="text" name="name" placeholder="Search for hotels" />
+    <button type="submit">Search</button>
+</form>
+<div th:each="hotel : ${hotels}">
+    <img th:src="@{${hotel.imageUrl}}" alt="Hotel Image" />
+    <h3 th:text="${hotel.name}"></h3>
+    <button th:onclick="'window.location.href=\'/hotels/' + ${hotel.id} + '\';'">Preview</button>
+</div>
+</body>
+</html>

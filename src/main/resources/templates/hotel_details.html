@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hotel Details</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+<h1 th:text="${hotel.name}"></h1>
+<img th:src="@{${hotel.imageUrl}}" alt="Hotel Image" />
+<p th:text="${hotel.description}"></p>
+<button onclick="history.back()">Back</button>
+</body>
+</html>
